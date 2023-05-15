@@ -1,0 +1,60 @@
+﻿@model RegisterViewModel
+@{ViewData["Title"] = "Registrera nytt konto";}
+
+<div class="d-flex justify-content-center">
+    <div class="col-6">
+        <form method="post" novalidate>
+
+            <div class="mb-3">
+                <label asp-for="Firstname" class="form-label"></label>
+                <input asp-for="Firstname" class="form-control"/>
+              <small><span asp-validation-for="Firstname" class="text-danger"> </span></small>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Lastname" class="form-label"></label>
+                <input asp-for="Lastname" class="form-control" />
+                <small><span asp-validation-for="Lastname" class="text-danger"> </span></small>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <small><span asp-validation-for="Email" class="text-danger"> </span></small>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Password" class="form-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <small><span asp-validation-for="Password" class="text-danger"> </span></small>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ConfirmPassword" class="form-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <small><span asp-validation-for="ConfirmPassword" class="text-danger"> </span></small>
+            </div>
+            <div class="mb-3">
+                <label asp-for="StreetName" class="form-label"></label>
+                <input asp-for="StreetName" class="form-control" />
+                <small><span asp-validation-for="StreetName" class="text-danger"> </span></small>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PostalCode" class="form-label"></label>
+                <input asp-for="PostalCode" class="form-control" />
+                <small><span asp-validation-for="PostalCode" class="text-danger"> </span></small>
+            </div>
+            <div class="mb-3">
+                <label asp-for="City" class="form-label"></label>
+                <input asp-for="City" class="form-control" />
+                <small><span asp-validation-for="City" class="text-danger"> </span></small>
+            </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-success mt-2">REGISTRERA</button>
+            </div>
+
+           
+
+
+        </form>
+
+    </div>
+
+</div>
