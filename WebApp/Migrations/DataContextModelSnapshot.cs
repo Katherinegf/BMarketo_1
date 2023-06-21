@@ -24,8 +24,7 @@ namespace WebApp.Migrations
 
             modelBuilder.Entity("WebApp.Models.Entities.ProfileEntity", b =>
                 {
-                    b.Property<Guid>("ProfileId")
-                        .ValueGeneratedOnAdd()
+                    b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("City")
@@ -45,14 +44,9 @@ namespace WebApp.Migrations
                     b.Property<string>("StreetName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uniqueidentifier");
+                    b.HasKey("UserId");
 
-                    b.HasKey("ProfileId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("ProfileEntities");
+                    b.ToTable("Profiles");
                 });
 
             modelBuilder.Entity("WebApp.Models.Entities.UserEntity", b =>
@@ -75,7 +69,7 @@ namespace WebApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("UserEntities");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("WebApp.Models.Entities.ProfileEntity", b =>

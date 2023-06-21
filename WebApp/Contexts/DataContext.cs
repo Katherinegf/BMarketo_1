@@ -5,7 +5,7 @@ namespace WebApp.Contexts;
 
 public class DataContext : DbContext
 {
-    public DbSet<ProfileEntity> ProfileEntities { get; set; }
-    public DbSet<UserEntity> UserEntities { get; set; }
+    public DbSet<ProfileEntity> Profiles { get; set; }
+    public DbSet<UserEntity> Users { get; set; }
     public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 }
