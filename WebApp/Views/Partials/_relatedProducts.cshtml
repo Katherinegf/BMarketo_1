@@ -1,0 +1,23 @@
+﻿@using WebApp.ViewModels;
+@model RelatedProductsViewModel
+
+<!-- related-products start -->
+<section class="related-products">
+    <div class="container">
+        <div class="heading">@Model.Heading</div>
+
+        @if (Model.GridCards != null)
+        {
+            <div class="row row-cols-4">
+
+                @foreach (var card in Model.GridCards)
+                {
+                    <partial name="/Views/Partials/_GridCollectionCard.cshtml" model="card" />
+                }
+
+            </div>
+        }
+
+    </div>
+</section>
+<!-- related-products end -->

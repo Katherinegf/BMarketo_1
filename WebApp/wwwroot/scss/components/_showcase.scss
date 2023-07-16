@@ -1,0 +1,62 @@
+﻿@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+.showcase {
+    background: $color-theme-3;
+    //Background-image is set at the _Showcase partial
+
+    .container {
+        padding-top: 40px;
+        padding-bottom: 40px;
+
+        @include lg {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .content {
+        font-family: $font-poppins;
+        color: $color-dark-1;
+        text-align: center;
+
+        @include lg {
+            max-width: 670px;
+            text-align: left;
+        }
+
+        .ingress {
+            font-size: 18px;
+            font-weight: $font-weight-regular;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            font-size: 40px;
+            font-weight: $font-weight-bold;
+            line-height: 1.2;
+            margin-bottom: 20px;
+
+            @include lg {
+                font-size: 60px;
+                margin-bottom: 50px;
+                margin-right: 50px;
+            }
+        }
+    }
+
+    .content-image {
+        display: none;
+        max-width: 625px;
+
+        @include lg {
+            display: block;
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+}

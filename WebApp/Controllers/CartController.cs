@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace WebApp.Views.Home
+namespace WebApp.Controllers
 {
-    public class HomeController : Controller
+    public class CartController : Controller
     {
         public IActionResult Index()
         {
+            ViewData["Title"] = "Cart";
             return View();
         }
     }

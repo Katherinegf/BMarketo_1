@@ -1,0 +1,50 @@
+﻿@using WebApp.ViewModels;
+@model AccountLoginViewModel
+
+<!-- login-form start -->
+<section class="login-form">
+    <div class="container">
+        <div class="form-content">
+            <div class="form-title">Please Login to Your Account</div>
+            <hr>
+            <form method="post" onsubmit="validateAllLogin(event)" novalidate>
+
+                <div class="line">
+                    <div asp-validation-summary="ModelOnly" class="error-text"></div>
+                </div>
+
+                <div class="line">
+                    <div class="email-content">
+                        <label asp-for="Email"></label>
+                        <a asp-controller="account" asp-action="register">Don't have an Account yet?</a>
+                    </div>
+                    <input asp-for="Email" onkeyup="validateInput(event)" id="login-email" required />
+                    <span asp-validation-for="Email" id="login-email-span" class="error-text"></span>
+                    <div id="login-email-error" class="error-text"></div>
+                </div>
+
+                <div class="line">
+                    <div class="password-content">
+                        <label asp-for="Password"></label>
+                        <a asp-controller="account" asp-action="newpassword" tabindex="-1">Forgot Your Password?</a>
+                    </div>
+                    <input asp-for="Password" onkeyup="validateInput(event)" id="login-password" required />
+                    <span asp-validation-for="Password" id="login-password-span" class="error-text"></span>
+                    <div id="login-password-error" class="error-text"></div>
+                </div>
+
+                @* DON'T HAVE ANY FUNCTIONALITY!
+                <label class="custom-checkbox">
+                Please keep me logged in
+                <input asp-for="KeepLoggedIn" type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+                </label>*@
+
+                <button class="btn-theme" type="submit">Submit</button>
+                <div id="form-error" class="error-text mt-2"></div>
+
+            </form>
+        </div>
+    </div>
+</section>
+<!-- login-form end -->

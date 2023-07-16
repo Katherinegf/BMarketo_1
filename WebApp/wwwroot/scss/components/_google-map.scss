@@ -1,0 +1,14 @@
+﻿@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+.google-map {
+    .container-fluid {
+        padding: 0;
+    }
+
+    iframe {
+        margin: 0;
+        padding: 0;
+    }
+}

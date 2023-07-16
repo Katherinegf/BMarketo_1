@@ -1,0 +1,133 @@
+﻿@import '../core/_colors.scss';
+@import '../core/_fonts.scss';
+@import '../core/_mixins.scss';
+
+header {
+    padding-top: 15px;
+    position: sticky;
+    left: auto;
+    right: auto;
+    top: 0;
+    width: 100%;
+    background: $color-white;
+    z-index: 10;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    @include lg {
+        padding-top: 30px;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: "logo btn" "menu menu";
+        padding-bottom: 15px;
+
+        @include lg {
+            grid-template-columns: 1fr 2fr;
+            grid-template-areas: "logo menu";
+            padding-bottom: 30px;
+        }
+    }
+
+    .logo {
+        grid-area: logo;
+    }
+
+    .menu {
+        grid-area: menu;
+        font-family: $font-poppins;
+
+
+        @include lg {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+
+        .menu-links {
+            color: $color-dark-1;
+
+            @include lg {
+                display: block;
+                padding-top: 0;
+            }
+
+            .link {
+                color: $color-dark-1;
+                display: block;
+                margin: 10px 20px;
+                padding: 10px;
+
+                @include lg {
+                    display: inline-block;
+                    margin: 0 20px;
+                    padding: 0;
+                }
+
+                &:hover {
+                    color: $color-theme-1;
+                }
+            }
+        }
+
+        .menu-icons {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 10;
+            text-align: center;
+            padding: 20px;
+            background: $color-dark-1;
+
+            @include lg {
+                position: static;
+                padding: 0;
+                background: none;
+            }
+
+            .link {
+                color: $color-white;
+                margin-left: 15px;
+
+                &:hover {
+                    color: $color-theme-1;
+                }
+
+                @include lg {
+                    color: $color-dark-2;
+
+                    &:hover {
+                        color: $color-theme-1;
+                    }
+                }
+            }
+        }
+    }
+
+    .toggle {
+        grid-area: btn;
+        display: flex;
+        justify-content: end;
+
+        @include lg {
+            display: none;
+        }
+
+        .btn-white,
+        .btn-dark {
+            padding: 5px 15px;
+            font-size: 1.4rem;
+        }
+    }
+}
+
+.menu-show {
+    display: block;
+}
+
+.menu-hide {
+    display: none;
+}

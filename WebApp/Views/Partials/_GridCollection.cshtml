@@ -1,0 +1,41 @@
+﻿@using WebApp.ViewModels;
+@model GridCollectionViewModel
+
+@if (Model != null)
+{
+    <!-- grid-collection start -->
+    <section class="grid-collection">
+        <div class="container">
+            <div class="heading">@Model.Title</div>
+
+            @if (Model.Categories != null)
+            {
+                <ul class="breadcrumb">
+
+                    @foreach (var category in Model.Categories)
+                    {
+                        <li><a class="link" href="/Products/Index">@category</a></li>
+                    }
+                </ul>
+            }
+
+            @if (Model.GridCards != null)
+            {
+                <div class="row row-cols-4">
+
+                    @foreach (var card in Model.GridCards)
+                    {
+                        <partial name="/Views/Partials/_GridCollectionCard.cshtml" model="card" />
+                    }
+                </div>
+            }
+
+            @if (Model.LoadMore)
+            {
+                <button>LOAD MORE <i class="fa-solid fa-rotate-right"></i></button>
+            }
+
+        </div>
+    </section>
+    <!-- grid-collection end -->
+}

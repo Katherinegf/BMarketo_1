@@ -13,7 +13,7 @@ namespace WebApp.Migrations
 {
     [DbContext(typeof(DataContext))]
     [Migration("20230515081027_init")]
-    partial class init
+    partial class initDb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

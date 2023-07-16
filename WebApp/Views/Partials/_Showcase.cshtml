@@ -1,0 +1,27 @@
+﻿@{
+    var showcase = showcaseService.GetLatest();
+}
+
+<!-- dynamic showcase start -->
+@if (showcase != null)
+{
+    <section class="showcase background-styling" style="background-image: url(https://images.unsplash.com/photo-1558346648-9757f2fa4474?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)">
+        <div class="container">
+            <div class="content">
+                <div class="ingress">@showcase?.Ingress</div>
+                <div class="title">@showcase?.Title</div>
+
+                @if (!string.IsNullOrEmpty(showcase?.Button?.Url) && !string.IsNullOrEmpty(showcase?.Button?.Content))
+                {
+                    <a class="btn-theme" href="@showcase?.Button?.Url">@showcase?.Button?.Content</a>
+                }
+
+            </div>
+            <div class="content-image">
+                <img src="@showcase?.ImageUrl" alt="@showcase?.Title">
+            </div>
+        </div>
+    </section>
+}
+
+<!-- dynamic showcase end -->

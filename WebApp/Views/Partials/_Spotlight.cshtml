@@ -1,0 +1,21 @@
+﻿@using WebApp.ViewModels;
+@model SpotlightViewModel
+
+<!-- shotlight start -->
+<section class="spotlight">
+    <div class="container">
+
+        @if (Model.SpotlightCards != null)
+        {
+            <div class="row row-cols-3">
+
+                @foreach (var card in Model.SpotlightCards)
+                {
+                    <partial name="/Views/Partials/_SpotlightCard.cshtml" model="card" />
+                }
+            </div>
+        }
+
+    </div>
+</section>
+<!-- shotlight end -->

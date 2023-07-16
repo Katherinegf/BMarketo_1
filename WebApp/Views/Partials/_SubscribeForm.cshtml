@@ -1,0 +1,13 @@
+﻿<!-- subscribe-form start -->
+<!-- this form isn't connected to a db, just validates in the frontend with js -->
+<section class="subscribe-form background-styling" style="background-image: url(https://images.unsplash.com/photo-1558346648-9757f2fa4474?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)">
+    <div class="container">
+        <form class="content" onsubmit="validateSubscribe(event)" novalidate>
+            <input type="text" onkeyup="validateInput(event)" id="subscribe-email" placeholder="Enter your mail here" />
+            <button class="btn-theme" type="submit">SUBSCRIBE FOR NEWSLETTER</button>
+            <span id="subscribe-email-span" class="error-text"></span>
+            <div id="subscribe-email-error" class="error-text"></div>
+        </form>
+    </div>
+</section>
+<!-- subscribe-form end -->

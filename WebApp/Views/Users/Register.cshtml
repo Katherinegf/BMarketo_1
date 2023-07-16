@@ -1,0 +1,129 @@
+﻿@using WebApp.ViewModels;
+@model UsersRegisterViewModel
+
+<partial name="/Views/Partials/_UserHeader.cshtml" />
+
+<!-- register-form start -->
+<section class="register-form">
+    <div class="container">
+        <div class="form-content">
+            <div class="form-title">Please Register a new User</div>
+            <hr>
+            <form method="post" onsubmit="validateAll(event)" novalidate>
+
+                <div class="line">
+                    <div asp-validation-summary="ModelOnly" class="error-text"></div>
+                </div>
+
+                <div class="line grid">
+                    <div class="column">
+                        <label asp-for="FirstName"></label>
+                        <input asp-for="FirstName" onkeyup="validateInput(event)" id="first-name" required />
+                        <span asp-validation-for="FirstName" id="first-name-span" class="error-text"></span>
+                        <div id="first-name-error" class="error-text"></div>
+                    </div>
+
+                    <div class="column">
+                        <label asp-for="LastName"></label>
+                        <input asp-for="LastName" onkeyup="validateInput(event)" id="last-name" required />
+                        <span asp-validation-for="LastName" id="last-name-span" class="error-text"></span>
+                        <div id="last-name-error" class="error-text"></div>
+                    </div>
+                </div>
+
+                <div class="line">
+                    <label asp-for="StreetName"></label>
+                    <input asp-for="StreetName" onkeyup="validateInput(event)" id="street-name" required />
+                    <span asp-validation-for="StreetName" id="street-name-span" class="error-text"></span>
+                    <div id="street-name-error" class="error-text"></div>
+                </div>
+
+                <div class="line grid">
+                    <div class="column">
+                        <label asp-for="PostalCode"></label>
+                        <input asp-for="PostalCode" onkeyup="validateInput(event)" id="postal-code" required />
+                        <span asp-validation-for="PostalCode" id="postal-code-span" class="error-text"></span>
+                        <div id="postal-code-error" class="error-text"></div>
+                    </div>
+                    <div class="column">
+                        <label asp-for="City"></label>
+                        <input asp-for="City" onkeyup="validateInput(event)" id="city" required />
+                        <span asp-validation-for="City" id="city-span" class="error-text"></span>
+                        <div id="city-error" class="error-text"></div>
+                    </div>
+                </div>
+
+                <div class="line grid">
+                    <div class="column">
+                        <label asp-for="PhoneNumber"></label>
+                        <input asp-for="PhoneNumber" />
+                        <span asp-validation-for="PhoneNumber" class="error-text"></span>
+                    </div>
+                    <div class="column">
+                        <label asp-for="CompanyName"></label>
+                        <input asp-for="CompanyName" />
+                        <span asp-validation-for="CompanyName" class="error-text"></span>
+                    </div>
+                </div>
+
+                <div class="line">
+                    <label asp-for="Email"></label>
+                    <input asp-for="Email" onkeyup="validateInput(event)" id="email" required />
+                    <span asp-validation-for="Email" id="email-span" class="error-text"></span>
+                    <div id="email-error" class="error-text"></div>
+                </div>
+
+                <div class="line">
+                    <label asp-for="Password"></label>
+                    <input asp-for="Password" onkeyup="validateInput(event)" id="password" required />
+                    <span asp-validation-for="Password" id="password-span" class="error-text"></span>
+                    <div id="password-error" class="error-text"></div>
+                </div>
+
+                <div class="line">
+                    <label asp-for="ConfirmPassword"></label>
+                    <input asp-for="ConfirmPassword" onkeyup="validateInput(event)" id="confirm-password" required />
+                    <span asp-validation-for="ConfirmPassword" id="confirm-password-span" class="error-text"></span>
+                    <div id="confirm-password-error" class="error-text"></div>
+                </div>
+
+                <div class="line">
+                    <label asp-for="ProfileImage"></label>
+                    <input asp-for="ProfileImage" id="profile-image" />
+                    <span asp-validation-for="ProfileImage" id="profile-image-span" class="error-text"></span>
+                    <div id="profile-image-error" class="error-text"></div>
+                </div>
+
+
+                @* --------------select ONE role!-------------- *@
+                <div class="line">
+                    <label asp-for="Role" class=""></label>
+                    <select asp-for="Role">
+                        @if (Model.AllRoles != null)
+                        {
+                            @foreach (var role in Model.AllRoles)
+                            {
+                                <option value="@role.Name">@role.Name!.ToUpper()</option>
+                            }
+                        }
+                    </select>
+                </div>
+                @* --------------select ONE role!-------------- *@
+
+
+                @* DON'T HAVE ANY FUNCTIONALITY!
+                <label class="custom-checkbox">
+                I have read and accepts the terms and agreements
+                <input asp-for="AcceptsTerms" type="checkbox" checked="checked">
+                <span class="checkmark"></span>
+                <span asp-validation-for="AcceptsTerms" class="error-text"></span>
+                </label>*@
+
+                <button class="btn-theme" type="submit">Submit</button>
+                <div id="form-error" class="error-text mt-2"></div>
+
+            </form>
+        </div>
+    </div>
+</section>
+<!-- register-form end -->

@@ -1,5 +1,35 @@
-﻿<div class="mb-5">
-    <a asp-controller="account" asp-action="register" class="m-2">Registrera</a>
-    <a asp-controller="account" asp-action="login" class="m-2">Logga in</a>
-    <a asp-controller="account" asp-action="account" class="m-2">Mitt konto</a>
-</div>
+﻿<!-- header start -->
+<header class="">
+    <div class="container header">
+        <a asp-controller="home" asp-action="Index"><img class="logo" src="~/images/logo.png" alt=""></a>
+
+        <div class="menu">
+            <nav class="menu-links menu-hide" id="menu-links">
+                <a class="link" asp-controller="home" asp-action="Index">HOME</a>
+                <a class="link" asp-controller="products" asp-action="Index">PRODUCTS</a>
+                <a class="link" asp-controller="contacts" asp-action="Index">CONTACT</a>
+            </nav>
+            <nav class="menu-icons">
+                <a class="link" asp-controller="search" asp-action="Index"><i class="fa-regular fa-search"></i></a>
+
+                @if (!signInManager.IsSignedIn(User))
+                {
+                    <a class="link" asp-controller="account" asp-action="login">Login</a>
+                }
+
+                <a class="link" asp-controller="cart" asp-action="Index"><i class="fa-solid fa-cart-shopping"></i></a>
+            </nav>
+        </div>
+
+        <div class="toggle">
+            <button class="btn-white btn-toggle" data-option="toggle" data-target="#menu-links"><i class="fa-regular fa-bars"></i></button>
+        </div>
+    </div>
+
+    @if (signInManager.IsSignedIn(User))
+    {
+        <partial name="/Views/Partials/_AccountHeader.cshtml" />
+    }
+
+</header>
+<!-- header end -->
